@@ -142,6 +142,12 @@ import {
 } from './Postmount/PostmountExample';
 import {PremountedExample} from './Premount';
 import {PremountedRemoteVideos} from './Premount/RemoteVideos';
+import {
+	ProfessionalEdit,
+	calculateProfessionalEditMetadata,
+	professionalEditDefaultProps,
+	professionalEditSchema,
+} from './ProfessionalEdit';
 import ReactSvg from './ReactSvg';
 import InfinityVideo from './ReallyLongVideo';
 import RemoteVideo from './RemoteVideo';
@@ -178,9 +184,9 @@ import {
 } from './StudioApis/SaveDefaultProps';
 import {TriggerCalculateMetadata} from './StudioApis/TriggerCalculateMetadata';
 import {WriteStaticFile} from './StudioApis/WriteStaticFile';
+import './style.css';
 import {SubtitleArtifact} from './SubtitleArtifact/SubtitleArtifact';
 import {SvgFilter} from './SvgFilter';
-import './style.css';
 import {Tailwind} from './Tailwind';
 import {TenFrameTester} from './TenFrameTester';
 import {TextStroke} from './TextStroke';
@@ -3057,6 +3063,17 @@ export const Index: React.FC = () => {
 				/>
 			</Folder>
 			<Folder name="video-editing">
+				<Composition
+					id="ProfessionalEdit"
+					component={ProfessionalEdit}
+					width={1080}
+					height={1920}
+					fps={30}
+					durationInFrames={300}
+					schema={professionalEditSchema}
+					defaultProps={professionalEditDefaultProps}
+					calculateMetadata={calculateProfessionalEditMetadata}
+				/>
 				<Composition
 					id="ActivityStressTest"
 					component={ActivityStressTest}
